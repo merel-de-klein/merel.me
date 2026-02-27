@@ -2,13 +2,14 @@
 
 import { siteConfig } from '@/constants/site';
 import { Blackbird } from '@/icons/Blackbird';
-import { Group } from '@/types/stash';
+import { groups } from '@/lib/stash-data';
+import { getGroupUrl } from '@/utils/nav-utils';
 import { Github, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export const NavbarClient = ({ groups }: { groups: Group[] }) => {
+export const Navbar = () => {
   const pathname = usePathname();
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -46,7 +47,7 @@ export const NavbarClient = ({ groups }: { groups: Group[] }) => {
 
           <div className="hidden lg:flex items-center gap-1">
             {groups.map((group) => {
-              const href = `/stash/${group.slug}`;
+              const href = getGroupUrl(group);
               const active = isActive(href);
 
               return (

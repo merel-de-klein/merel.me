@@ -14,10 +14,10 @@ export const categories: Category[] = [
   { id: 12, groupId: 1, name: 'Switch', slug: 'switch', color: 'bg-red-400' },
   { id: 20, groupId: 1, name: 'PS4', slug: 'ps4', color: 'bg-blue-700' },
   { id: 21, groupId: 1, name: 'PS5', slug: 'ps5', color: 'bg-blue-600' },
+  { id: 22, groupId: 1, name: 'Board Game', slug: 'board-game', color: 'bg-amber-500' },
 
   { id: 30, groupId: 2, name: 'Book', slug: 'books', color: 'bg-emerald-600' },
 
-  { id: 31, groupId: 3, name: 'Board Game', slug: 'board-game', color: 'bg-amber-500' },
   { id: 40, groupId: 3, name: 'Tech', slug: 'tech', color: 'bg-slate-800' },
 
   { id: 50, groupId: 4, name: 'Blu-ray', slug: 'blu-ray', color: 'bg-indigo-600' },
@@ -134,7 +134,7 @@ export const stashItems: StashItem[] = [
   },
   {
     id: 7,
-    categoryId: 31,
+    categoryId: 22,
     statusId: 2,
     slug: 'root-board-game',
     title: 'Root',
