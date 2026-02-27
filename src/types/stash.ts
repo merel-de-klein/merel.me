@@ -29,10 +29,9 @@ export interface StashItem {
   statusId: number;
   slug: string;
   title: string;
+  creator: string;
   thoughts: string;
   isFavorite?: boolean;
   imageUrl: string;
   tags: number[];
-  artist?: string; // Optional for Vinyl/Music
-  author?: string; // Optional for books
 }
