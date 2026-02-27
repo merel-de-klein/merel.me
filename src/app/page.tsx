@@ -1,4 +1,8 @@
 import { CurrentMediaSection } from '@/app/_sections/CurrentMediaSection';
+import { SectionHeader } from '@/components/SectionHeader';
+import { getDaysSince } from '@/utils/date-utils';
+import { ArrowUpRight } from 'lucide-react';
+import { CurrentPositionSection } from './_sections/CurrentPositionSection';
 
 export default function Home() {
   return (
@@ -14,6 +18,8 @@ export default function Home() {
           creating.
         </p>
       </section>
+
+      <CurrentPositionSection index={0} />
 
       <CurrentMediaSection />
     </main>
