@@ -1,9 +1,10 @@
+import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { personalInfo, siteConfig } from '@/constants/site';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { siteConfig } from '@/constants/site';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -18,24 +19,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://merel.me'),
   title: {
-    default: `${siteConfig.name} — Frontend Dev`,
-    template: `%s | ${siteConfig.name}`,
+    default: `${personalInfo.name} — Frontend Dev`,
+    template: `%s | ${personalInfo.name}`,
   },
   description: siteConfig.description,
   keywords: ['Design', 'Frontend', 'Development', 'Stash', 'Archive'],
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
+  authors: [{ name: personalInfo.name }],
+  creator: personalInfo.name,
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://merel.me',
-    title: siteConfig.name,
+    title: personalInfo.name,
     description: siteConfig.description,
-    siteName: siteConfig.name,
+    siteName: personalInfo.name,
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
+    title: personalInfo.name,
     description: siteConfig.description,
   },
 };
@@ -61,6 +62,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
