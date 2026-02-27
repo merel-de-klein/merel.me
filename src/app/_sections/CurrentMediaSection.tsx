@@ -2,12 +2,12 @@ import { getCurrentStash } from '@/api/stash';
 import { StashItemList } from '@/components/StashItemList';
 import { SectionHeader } from '@/components/SectionHeader';
 
-export const CurrentMediaSection = async () => {
+export const CurrentMediaSection = async ({ index }: { index: number }) => {
   const items = await getCurrentStash();
   return (
     <section className="space-y-8">
       <SectionHeader
-        index={1}
+        index={index}
         title="Media in Progress"
         description="( Literature • Interactive • Audio • Visual )"
         meta={
@@ -18,7 +18,7 @@ export const CurrentMediaSection = async () => {
             : undefined
         }
       />
-      <StashItemList index={1} items={items} />
+      <StashItemList index={index} items={items} />
     </section>
   );
 };

@@ -21,7 +21,7 @@ export default function Home() {
 
       <CurrentPositionSection index={0} />
 
-      <CurrentMediaSection />
+      <CurrentMediaSection index={1} />
     </main>
   );
 }
