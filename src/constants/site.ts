@@ -21,3 +21,8 @@ export const currentPosition = {
   stack: ['React', 'TypeScript', 'SCSS'],
   projectSite: 'https://www.thingiverse.com',
 };
+
+export const personalInfo = {
+  birthday: new Date('1997-06-02'),
+  location: 'Gouda'
+};
