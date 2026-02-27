@@ -3,7 +3,7 @@ import { ArrowUpRight, Star } from 'lucide-react';
 interface ItemSummaryProps {
   index?: number;
   title: string;
-  subtitle?: string;
+  by?: string;
   description?: string;
   meta?: string;
   isFavorite?: boolean;
@@ -12,7 +12,7 @@ interface ItemSummaryProps {
 export const SummaryListItem = ({
   index,
   title,
-  subtitle,
+  by,
   description,
   meta,
   isFavorite
@@ -37,9 +37,9 @@ export const SummaryListItem = ({
             )}
           </div>
 
-          {subtitle && (
+          {by && (
             <span className="text-[11px] font-black text-muted/60 uppercase tracking-[0.2em]">
-              BY // {subtitle}
+              BY // {by}
             </span>
           )}
         </div>
