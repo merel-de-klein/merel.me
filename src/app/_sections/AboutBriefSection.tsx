@@ -25,7 +25,7 @@ export const AboutBriefSection = ({ index }: { index: number }) => {
                 fill
                 priority
               />
-              <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="absolute inset-0 bg-highlight/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </div>
           </div>
 
@@ -41,9 +41,9 @@ export const AboutBriefSection = ({ index }: { index: number }) => {
             <div className="space-y-2">
               <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-[0.9] text-foreground/90">
                 Technical Problems. <br />
-                Human <span className="text-emerald-500/80">Solutions</span>.
+                Human <span className="text-highlight/80">Solutions</span>.
               </h3>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-500/60">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-highlight/60">
                 Refining the old // Engineering the new
               </p>
             </div>
@@ -68,7 +68,7 @@ export const AboutBriefSection = ({ index }: { index: number }) => {
                 <span className="block text-[8px] font-black uppercase tracking-[0.2em] text-foreground/30">
                   Academic_Record
                 </span>
-                <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-foreground/70">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/70">
                   BSc Informatica // Cum Laude
                 </p>
               </div>
@@ -77,7 +77,7 @@ export const AboutBriefSection = ({ index }: { index: number }) => {
                 <span className="block text-[8px] font-black uppercase tracking-[0.2em] text-foreground/30">
                   Linguistic_Profile
                 </span>
-                <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-foreground/70">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/70">
                   Dutch [Native] // English [C2 / CPE Grade A]
                 </p>
               </div>
@@ -86,7 +86,7 @@ export const AboutBriefSection = ({ index }: { index: number }) => {
                 <span className="block text-[8px] font-black uppercase tracking-[0.2em] text-foreground/30">
                   System_Flavor
                 </span>
-                <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-foreground/30">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-foreground/30">
                   LOTR Enthusiast // Extended
                 </p>
               </div>
@@ -95,10 +95,10 @@ export const AboutBriefSection = ({ index }: { index: number }) => {
 
           <Link
             href="/about"
-            className="group inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] hover:text-emerald-500 transition-colors"
+            className="group inline-flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] hover:text-highlight transition-colors"
           >
             READ_FULL_BIO
-            <div className="h-8 w-8 rounded-full border border-border/60 flex items-center justify-center group-hover:border-emerald-500 group-hover:bg-emerald-500/5 transition-all">
+            <div className="h-8 w-8 rounded-full border border-border/60 flex items-center justify-center group-hover:border-emerald-500 group-hover:bg-highlight/5 transition-all">
               <ArrowRight size={14} />
             </div>
           </Link>

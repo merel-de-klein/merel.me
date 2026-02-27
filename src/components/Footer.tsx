@@ -18,13 +18,13 @@ export const Footer = () => {
         <div className="flex items-center gap-8 text-[10px] font-black uppercase tracking-[0.3em]">
           <a
             href={siteConfig.links.github}
-            className="hover:text-emerald-500 transition-colors"
+            className="hover:text-highlight transition-colors"
           >
             Github
           </a>
           <a
             href={siteConfig.links.linkedin}
-            className="hover:text-emerald-500 transition-colors"
+            className="hover:text-highlight transition-colors"
           >
             LinkedIn
           </a>
@@ -33,7 +33,7 @@ export const Footer = () => {
             download={cvConfig.fileName}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-emerald-500 transition-colors flex items-center gap-2"
+            className="hover:text-highlight transition-colors flex items-center gap-2"
           >
             CV_Download
           </a>
@@ -45,13 +45,13 @@ export const Footer = () => {
               <Blackbird />
             </div>
 
-            <span className="text-[8px] font-black uppercase tracking-[0.2em] text-emerald-500/60 flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-[8px] font-black uppercase tracking-[0.2em] text-highlight/60 flex items-center gap-2">
+              <span className="h-1 w-1 rounded-full bg-highlight animate-pulse" />
               System_Active
             </span>
           </div>
 
-          <span className="text-[8px] font-medium uppercase tracking-[0.1em] text-foreground/30">
+          <span className="text-[8px] font-medium uppercase tracking-widest text-foreground/30">
             {personalInfo.location}.{personalInfo.country} // ©{' '}
             {new Date().getFullYear()}
           </span>

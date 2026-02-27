@@ -29,8 +29,8 @@ export const CurrentPositionSection = ({ index }: { index: number }) => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-highlight opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-highlight"></span>
               </span>
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/60">
                 LATEST_DEPLOYMENT // ACTIVE
@@ -80,7 +80,7 @@ export const CurrentPositionSection = ({ index }: { index: number }) => {
                   <span className="text-sm font-bold uppercase tracking-tight">
                     {currentPosition.location}
                   </span>
-                  <MapPin size={14} className="text-emerald-500" />
+                  <MapPin size={14} className="text-highlight" />
                 </div>
               </div>
 
@@ -119,7 +119,7 @@ export const CurrentPositionSection = ({ index }: { index: number }) => {
                     <span className="text-[10px] font-black opacity-20 uppercase tracking-tighter">
                       Status
                     </span>
-                    <p className="text-[10px] font-bold uppercase text-emerald-500">
+                    <p className="text-[10px] font-bold uppercase text-highlight">
                       Active
                     </p>
                   </div>
