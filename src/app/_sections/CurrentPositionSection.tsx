@@ -1,4 +1,3 @@
-// app/_sections/CurrentPositionSection.tsx
 import { SectionHeader } from '@/components/SectionHeader';
 import { currentPosition } from '@/constants/site';
 import { getDaysSince } from '@/utils/date-utils';

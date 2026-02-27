@@ -3,6 +3,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { getDaysSince } from '@/utils/date-utils';
 import { ArrowUpRight } from 'lucide-react';
 import { CurrentPositionSection } from './_sections/CurrentPositionSection';
+import { AboutBriefSection } from './_sections/AboutBriefSection';
 
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
 
       <CurrentPositionSection index={0} />
 
-      <CurrentMediaSection index={1} />
+      <AboutBriefSection index={1} />
+
+      <CurrentMediaSection index={2} />
     </main>
   );
 }
