@@ -1,15 +1,17 @@
-import { Group, StashItem } from '@/types/stash';
-import { getGroupUrl } from '@/utils/nav-utils';
-import Link from 'next/link';
-import { SummaryListItem } from '../SummaryListItem';
 import { groups } from '@/lib/stash-data';
+import { StashItem } from '@/types/stash';
+import { getGroupUrl } from '@/utils/nav-utils';
 import { getStashItemStatus } from '@/utils/stash-utils';
+import Link from 'next/link';
+import { SummaryListItem } from './SummaryListItem';
 
 interface CurrentMediaListProps {
   items: StashItem[];
+  index: number;
 }
 
-export const CurrentMediaListClient = ({
+export const StashItemList = ({
+  index,
   items,
 }: CurrentMediaListProps) => {
   const hasItems = items.length > 0;
@@ -33,7 +35,7 @@ export const CurrentMediaListClient = ({
     return (
       <div className="mt-6 py-16 border-2 border-dashed border-border/40 rounded-3xl flex flex-col items-center justify-center text-center">
         <div className="mb-8 flex items-center gap-3 text-[10px] font-black text-muted/30 uppercase tracking-[0.4em]">
-          <span>Vol. 01</span>
+          <span>Vol. {index.toString().padStart(2, '0')}</span>
           <span className="w-[1px] h-3 bg-border/50 rotate-[20deg]" />
           <span>Null</span>
         </div>
