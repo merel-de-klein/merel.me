@@ -1,7 +1,7 @@
 import { SectionHeader } from '@/components/SectionHeader';
-import { currentPosition } from '@/constants/site';
+import { currentPosition } from '@/lib/experience-data';
 import { getDaysSince } from '@/utils/date-utils';
-import { ArrowUpRight, History, MapPin, Box } from 'lucide-react';
+import { ArrowUpRight, Box, History, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
 export const CurrentPositionSection = ({ index }: { index: number }) => {
