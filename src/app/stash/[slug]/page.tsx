@@ -17,7 +17,7 @@ export default async function StashGroupPage({
   const Icon = (Icons as any)[group.iconName] || Icons.HelpCircle;
 
   return (
-    <main className="min-h-screen pt-32 pb-20 px-6">
+    <main className="max-w-7xl mx-auto px-6 py-12 space-y-24">
       <div className="max-w-7xl mx-auto">
         <header className="mb-24 relative">
           {/* Background Icon Watermark */}

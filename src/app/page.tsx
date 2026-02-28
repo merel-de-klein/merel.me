@@ -1,9 +1,6 @@
 import { CurrentMediaSection } from '@/app/_sections/CurrentMediaSection';
-import { SectionHeader } from '@/components/SectionHeader';
-import { getDaysSince } from '@/utils/date-utils';
-import { ArrowUpRight } from 'lucide-react';
-import { CurrentPositionSection } from './_sections/CurrentPositionSection';
 import { AboutBriefSection } from './_sections/AboutBriefSection';
+import { CurrentPositionSection } from './_sections/CurrentPositionSection';
 
 export default function Home() {
   return (
