@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mereldeklein.dev"
+        }
+      ],
+      "destination": "https://merel.me/experience",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mereldeklein.dev"
+        }
+      ],
+      "destination": "https://merel.me/experience",
+      "permanent": false
+    }
+  ]
+}
