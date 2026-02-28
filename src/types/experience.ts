@@ -19,3 +19,22 @@ export interface Experience {
   company: Company;
   positions: Position[];
 }
+
+export interface Education {
+  id: string;
+  type: 'degree' | 'certification' | 'course' | 'school';
+  institution: string;
+  location?: string;
+  field?: string;
+  degree?: string;
+  startAt: string;
+  endedAt: string;
+  details: string[];
+  isHighlight?: boolean;
+  isFeatured?: boolean;
+  score?: {
+    label: string;
+    value: string;
+  }[];
+  honors?: string;
+}

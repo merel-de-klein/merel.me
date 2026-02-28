@@ -1,4 +1,4 @@
-import { Experience } from "@/types/experience";
+import { Education, Experience } from "@/types/experience";
 
 export const currentPosition = {
   started: new Date('2022-10-01'),
@@ -114,6 +114,76 @@ export const workExperience: Experience[] = [
         endedAt: '2017-01-31',
         stack: ['AngularJS', 'XDoc'],
       }
+    ]
+  }
+];
+
+export const educationHistory: Education[] = [
+  {
+    id: 'cpe-2023',
+    type: 'certification',
+    institution: 'Cambridge Assessment English',
+    location: 'Rotterdam, NL',
+    degree: 'Cambridge English: Proficiency (CPE)',
+    startAt: '2023-11-01',
+    endedAt: '2023-11-01',
+    isHighlight: true,
+    score: [
+      { label: 'GRADE', value: 'A' },
+      { label: 'OVERALL', value: '222' },
+      { label: 'CEFR', value: 'C2' }
+    ],
+    details: [
+      'Highest level English qualification (Level 3 Certificate)',
+      'Demonstrated master-level command of the English language',
+      'Certificate obtained'
+    ]
+  },
+  {
+    id: 'hu-bachelor',
+    type: 'degree',
+    institution: 'HU University of Applied Sciences Utrecht',
+    location: 'Utrecht, NL',
+    field: 'Software and Information Engineering',
+    degree: 'Bachelor of Science (Informatica)',
+    startAt: '2014-09-01',
+    endedAt: '2018-07-31',
+    isHighlight: true,
+    isFeatured: true,
+    details: [
+      'Specialization: Frontend Development',
+      'Minor: English Language and Culture',
+      'Bachelor of Science degree obtained',
+      'Graduated Cum Laude'
+    ],
+    honors: 'Cum_Laude_Verified',
+  },
+  {
+    id: 'hu-pre-hbo',
+    type: 'course',
+    institution: 'HU University of Applied Sciences Utrecht',
+    location: 'Utrecht, NL',
+    degree: 'Pre-HBO Course',
+    startAt: '2014-04-01',
+    endedAt: '2014-07-31',
+    details: [
+      'Course: Introduction to programming with Java',
+      'Successfully prepared for higher vocational education',
+      'Certificate obtained'
+    ]
+  },
+  {
+    id: 'revius-havo',
+    type: 'school',
+    institution: 'Revius Lyceum',
+    location: 'Doorn, NL',
+    degree: 'HAVO (Higher General Continued Education)',
+    startAt: '2009-09-01',
+    endedAt: '2014-06-30',
+    details: [
+      'Profile: Nature & Technology / Nature & Health',
+      'Key Subjects: Biology, Physics, Chemistry, Mathematics B & D',
+      'Diploma obtained'
     ]
   }
 ];
