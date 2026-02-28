@@ -15,12 +15,8 @@ export default function AboutPage() {
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-24 space-y-32">
-
-      {/* 01: BIOGRAPHICAL LOG */}
       <section className="relative">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
-
-          {/* Portrait & Identity Column */}
           <div className="w-full lg:w-1/3 space-y-10">
             <div className="relative group">
                <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border/40 bg-zinc-900 grayscale group-hover:grayscale-0 transition-all duration-700">
@@ -37,7 +33,6 @@ export default function AboutPage() {
                </div>
             </div>
 
-            {/* System Stats */}
             <div className="space-y-4 px-2">
                <div className="flex items-center justify-between border-b border-border/20 pb-2">
                   <span className="text-[9px] font-mono text-muted-foreground uppercase">Base_Origin</span>
@@ -58,7 +53,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Narrative Column */}
           <div className="flex-1 space-y-12 lg:pt-4">
             <div className="space-y-6">
               <div className="space-y-2">
@@ -104,7 +98,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 02: FIELD LOGS GALLERY */}
       <section className="space-y-8">
         <div className="flex items-center gap-4">
           <h3 className="text-[10px] font-black uppercase tracking-[0.5em] text-highlight">Visual_Archive</h3>

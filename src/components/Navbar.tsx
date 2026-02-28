@@ -4,14 +4,20 @@ import { siteConfig } from '@/constants/site';
 import { Blackbird } from '@/icons/Blackbird';
 import { groups } from '@/lib/stash-data';
 import { getGroupUrl } from '@/utils/nav-utils';
-import { Github, Moon, Sun } from 'lucide-react';
+import { Github, Menu, Moon, Sun, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export const Navbar = () => {
   const pathname = usePathname();
   const { setTheme, resolvedTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
@@ -23,7 +29,6 @@ export const Navbar = () => {
   return (
     <nav className="sticky select-none top-0 z-50 w-full border-b border-border bg-nav backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
         <div className="flex items-center gap-8">
           <Link
             href="/"
@@ -68,7 +73,7 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <div className="flex items-center gap-4 mr-2">
+          <div className="hidden md:flex items-center gap-4 mr-2">
             <Link
               href="/experience"
               className={`text-sm font-bold transition-colors ${
@@ -121,6 +126,71 @@ export const Navbar = () => {
                 className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
               />
             </button>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 text-muted hover:text-accent hover:bg-border/50 rounded-lg transition-all active:scale-95"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`lg:hidden absolute top-20 left-0 w-full border-b border-border transition-all duration-300 ease-in-out overflow-hidden shadow-2xl ${
+          isMenuOpen
+            ? 'max-h-[80vh] opacity-100 bg-background/98 backdrop-blur-md'
+            : 'max-h-0 opacity-0 bg-background/0 backdrop-blur-none'
+        }`}
+      >
+        <div className="px-6 py-10 flex flex-col gap-8">
+          <div className="flex flex-col gap-3">
+            <span className="text-[10px] font-mono text-highlight uppercase tracking-[0.3em] mb-2 opacity-60">
+              System_Modules
+            </span>
+            {groups.map((group) => {
+              const href = getGroupUrl(group);
+              const active = isActive(href);
+              return (
+                <Link
+                  key={group.id}
+                  href={href}
+                  className={`text-3xl font-black uppercase tracking-tighter transition-colors ${
+                    active ? 'text-highlight' : 'text-foreground/90'
+                  }`}
+                >
+                  {group.name}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="h-px w-full bg-border" />
+
+          <div className="flex flex-col gap-5">
+            <span className="text-[10px] font-mono text-highlight uppercase tracking-[0.3em] opacity-60">
+              Dossier_Access
+            </span>
+            <div className="grid grid-cols-2 gap-4">
+               <Link
+                href="/experience"
+                className={`text-sm font-bold uppercase p-4 border border-border/60 rounded-xl text-center transition-colors ${
+                  pathname === '/experience' ? 'bg-highlight text-black border-highlight' : 'bg-border/20 text-foreground'
+                }`}
+              >
+                Experience
+              </Link>
+              <Link
+                href="/about"
+                className={`text-sm font-bold uppercase p-4 border border-border/60 rounded-xl text-center transition-colors ${
+                  pathname === '/about' ? 'bg-highlight text-black border-highlight' : 'bg-border/20 text-foreground'
+                }`}
+              >
+                About
+              </Link>
+            </div>
           </div>
         </div>
       </div>
