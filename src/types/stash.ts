@@ -28,16 +28,15 @@ export interface Tag {
 
 export interface StashItem {
   id: number;
-  categoryId: number;
-  statusId: number;
+  category_id: number;
+  status_id: number;
   slug: string;
   title: string;
   creator: string;
   thoughts: string;
-  isFavorite?: boolean;
-  imageUrl: string;
-  tagIds: number[];
-  updatedAt: string;
+  is_favorite?: boolean;
+  image_url: string;
+  updated_at: string;
 }
 
 export interface StashItemEnriched extends StashItem {

@@ -3,11 +3,11 @@ import { categories, groups, statuses } from '@/lib/stash-data';
 import { Category, Group, StashItem, Status } from '@/types/stash';
 
 export const getStashItemStatus = (item: StashItem): string => {
-  const category = categories.find((c) => c.id === item.categoryId);
-  const status = statuses.find((s) => s.id === item.statusId);
+  const category = categories.find((c) => c.id === item.category_id);
+  const status = statuses.find((s) => s.id === item.status_id);
 
   const verb = category
-    ? STATUS_VERBS[category.groupId]?.[item.statusId]
+    ? STATUS_VERBS[category.groupId]?.[item.status_id]
     : status?.name;
 
   return verb || status?.name || 'Unknown';

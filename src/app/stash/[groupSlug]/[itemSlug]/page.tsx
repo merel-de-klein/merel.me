@@ -36,8 +36,8 @@ export default async function StashItemPage({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         <div className="lg:col-span-5 space-y-12">
           <div className="aspect-[3/4] overflow-hidden bg-zinc-100 dark:bg-zinc-900 rounded-sm relative group">
-            <StashImage src={item.imageUrl} alt={item.title} />
-            {item.isFavorite && (
+            <StashImage src={item.image_url} alt={item.title} />
+            {item.is_favorite && (
               <div className="absolute top-4 right-4 bg-white/90 dark:bg-black/90 p-2 rounded-full">
                 <Icons.Star
                   size={16}
@@ -172,7 +172,7 @@ export async function generateMetadata({
       description: `Archived entry by ${item.creator}`,
       images: [
         {
-          url: item.imageUrl,
+          url: item.image_url,
           width: 1200,
           height: 630,
           alt: item.title,
@@ -184,7 +184,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: item.title,
       description: `Viewing ${item.title} in the ${item.group.name} stash.`,
-      images: [item.imageUrl],
+      images: [item.image_url],
     },
   };
 }

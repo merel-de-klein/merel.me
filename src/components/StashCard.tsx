@@ -11,9 +11,9 @@ export default function StashCard({ item }: { item: StashItemEnriched }) {
       href={getStashItemUrl(item)}
     >
       <div className="relative w-full md:w-[280px] shrink-0 bg-zinc-100 dark:bg-black overflow-hidden h-[320px] md:h-auto border-r border-zinc-100 dark:border-white/5">
-        <StashImage src={item.imageUrl} alt={item.title} />
+        <StashImage src={item.image_url} alt={item.title} />
 
-        {item.isFavorite && (
+        {item.is_favorite && (
           <div className="absolute top-4 right-4 bg-white/90 dark:bg-black/90 p-2 rounded-full">
             <Star size={16} className="fill-yellow-400 text-yellow-400" />
           </div>

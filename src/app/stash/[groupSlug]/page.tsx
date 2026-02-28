@@ -74,7 +74,7 @@ export async function generateMetadata({
       title: `${group.name} Digital Archive`,
       description: `A curated stash of ${itemCount} entries in ${group.name}.`,
       type: 'website',
-      images: items.length > 0 ? [{ url: items[0].imageUrl }] : [],
+      images: items.length > 0 ? [{ url: items[0].image_url }] : [],
     },
     twitter: {
       card: 'summary_large_image',

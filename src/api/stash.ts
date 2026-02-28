@@ -1,56 +1,125 @@
-import { stashItems, tags } from "@/lib/stash-data";
-import { StashItem, StashItemEnriched, Tag } from "@/types/stash";
+import { StashItem, StashItemEnriched } from "@/types/stash";
 import { getCategoriesByGroup, getCategoryById, getGroupById, getStatusById } from "@/utils/stash-utils";
+import { supabase } from "@/utils/suprabase";
+import { unstable_cache } from "next/cache";
 
-export const getTags = async (): Promise<Tag[]> => tags;
-
-export const resolveTags = async (tagIds: number[]): Promise<Tag[]> => {
-  return tagIds
-    .map((id) => tags.find((t) => t.id === id))
-    .filter((tag): tag is Tag => tag !== undefined);
-};
-
-const enrichStashItem = async (item: StashItem): Promise<StashItemEnriched|undefined> => {
-  const category = getCategoryById(item.categoryId);
+const enrichStashItem = (item: StashItem): Omit<StashItemEnriched, 'tags'>|undefined => {
+  const category = getCategoryById(item.category_id);
   const group = getGroupById(category?.groupId || 0);
-  const status = getStatusById(item.statusId);
+  const status = getStatusById(item.status_id);
 
   if (!category || !group || !status) return;
-
-  const tags = await resolveTags(item.tagIds);
 
   return {
     ...item,
     group,
     category,
     status,
-    tags,
   };
 };
 
-export const getStashItemBySlug = async (slug: string): Promise<StashItemEnriched|undefined> => {
-  const item = stashItems.find((i) => i.slug === slug);
-  return item ? enrichStashItem(item) : undefined;
+export const getCurrentStash = unstable_cache(
+  async (): Promise<StashItemEnriched[]> => {
+    const { data, error } = await supabase
+      .from('stash_items')
+      .select('*, tags(id, name)')
+      .eq('status_id', 2)
+      .order('updated_at', { ascending: false });
+
+    if (error || !data) {
+      console.error('Supabase error:', error);
+      return [];
+    }
+
+    return data.reduce((acc: StashItemEnriched[], item) => {
+      const enrichedBase = enrichStashItem(item);
+
+      if (enrichedBase) {
+        acc.push({
+          ...enrichedBase,
+          tags: item.tags || []
+        } as StashItemEnriched);
+      }
+
+      return acc;
+    }, []);
+  },
+  ['current-stash'],
+  { revalidate: 3600, tags: ['stash'] }
+);
+
+export const getStashItemBySlug = async (slug: string): Promise<StashItemEnriched | undefined> => {
+  const fetchItem = unstable_cache(
+    async (s: string) => {
+      const { data, error } = await supabase
+        .from('stash_items')
+        .select(`
+          *,
+          tags ( id, name )
+        `)
+        .eq('slug', s)
+        .single();
+
+      if (error || !data) {
+        console.error('Supabase error:', error);
+        return undefined;
+      }
+
+      const enrichedBase = enrichStashItem(data);
+      if (!enrichedBase) return undefined;
+
+      return {
+        ...enrichedBase,
+        tags: data.tags || [],
+      } as StashItemEnriched;
+    },
+    [`stash-item-${slug}`],
+    {
+      revalidate: 3600,
+      tags: ['stash', `stash-item-${slug}`]
+    }
+  );
+
+  return fetchItem(slug);
 };
 
-export const getCurrentStash = async (): Promise<StashItemEnriched[]> => {
-  const items = stashItems.filter((item) => item.statusId === 2);
-  const itemPromises = items.map(enrichStashItem);
-  const results = await Promise.all(itemPromises);
-
-  return results.filter((item) => item !== undefined);
-}
 
 export const getStashByGroup = async (groupId: number): Promise<StashItemEnriched[]> => {
   const categories = getCategoriesByGroup(groupId);
-  const categoryIds = new Set(categories.map((category) => category.id));
+  const categoryIds = categories .map((c) => c.id);
 
-  const filteredSortedItems = stashItems
-    .filter(item => categoryIds.has(item.categoryId))
-    .sort((a, b) => a.id - b.id);
+  if (categoryIds.length === 0) return [];
 
-  const itemPromises = filteredSortedItems.map(enrichStashItem);
-  const results = await Promise.all(itemPromises);
+  const fetchGroupData = unstable_cache(
+    async (ids: number[]) => {
+      const { data, error } = await supabase
+        .from('stash_items')
+        .select('*, tags(id, name)')
+        .in('category_id', ids)
+        .order('id', { ascending: true });
 
-  return results.filter((item) => item !== undefined);
-}
+      if (error || !data) {
+        console.error('Supabase error:', error);
+        return [];
+      }
+
+      return data.reduce((acc: StashItemEnriched[], item) => {
+        const enrichedBase = enrichStashItem(item);
+        if (enrichedBase) {
+          acc.push({
+            ...enrichedBase,
+            tags: item.tags || []
+          } as StashItemEnriched);
+        }
+        return acc;
+      }, []);
+    },
+    [`stash-group-${groupId}`], // Cache Key
+    {
+      revalidate: 3600,
+      tags: ['stash', `group-${groupId}`]
+    }
+  );
+
+  return fetchGroupData(categoryIds);
+};

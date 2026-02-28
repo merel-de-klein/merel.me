@@ -17,7 +17,7 @@ export default function StashListClient({
 
   const filteredItems = useMemo(() => {
     if (activeFilterId === 'All') return items;
-    return items.filter((item) => item.statusId === activeFilterId);
+    return items.filter((item) => item.status_id === activeFilterId);
   }, [activeFilterId, items]);
 
   return (
