@@ -1,6 +1,6 @@
 import { CurrentMediaSection } from '@/app/_sections/CurrentMediaSection';
-import { AboutBriefSection } from './_sections/AboutBriefSection';
-import { CurrentPositionSection } from './_sections/CurrentPositionSection';
+import { AboutBriefSection } from '@/components/sections/AboutBriefSection';
+import { CurrentPositionSection } from '@/components/sections/CurrentPositionSection';
 
 export default function Home() {
   return (
