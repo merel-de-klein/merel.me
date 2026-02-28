@@ -7,10 +7,10 @@ import StashListClient from './_sections/StashListClient';
 export default async function StashGroupPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ groupSlug: string }>;
 }) {
-  const { slug } = await params;
-  const group = getGroupBySlug(slug);
+  const { groupSlug } = await params;
+  const group = getGroupBySlug(groupSlug);
   if (!group) notFound();
 
   const items = await getStashByGroup(group.id);
@@ -20,7 +20,6 @@ export default async function StashGroupPage({
     <main className="max-w-7xl mx-auto px-6 py-12 space-y-24">
       <div className="max-w-7xl mx-auto">
         <header className="mb-24 relative">
-          {/* Background Icon Watermark */}
           <div className="absolute -top-12 right-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
             {Icon && <Icon size={400} strokeWidth={1} />}
           </div>
