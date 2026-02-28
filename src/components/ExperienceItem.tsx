@@ -37,7 +37,7 @@ export const ExperienceItem = ({ experience }: { experience: Experience }) => {
                 isActive
                   ? 'border-highlight/40'
                   : pos.isHighlight
-                    ? 'border-cyan-500/30'
+                    ? 'border-featured/30'
                     : 'border-border/40'
               }`}
             >
@@ -45,7 +45,7 @@ export const ExperienceItem = ({ experience }: { experience: Experience }) => {
                 isActive
                   ? 'bg-highlight shadow-[0_0_10px_rgba(16,185,129,0.8)] animate-pulse'
                   : pos.isHighlight
-                    ? 'bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,0.5)]'
+                    ? 'bg-featured shadow-[0_0_8px_rgba(6,182,212,0.5)]'
                     : 'bg-border group-hover:bg-highlight'
               }`} />
 
@@ -60,7 +60,7 @@ export const ExperienceItem = ({ experience }: { experience: Experience }) => {
                       <span className={`text-[8px] font-black px-1.5 py-0.5 border rounded-sm tracking-[0.1em] ${
                         isActive
                           ? 'bg-highlight/10 text-highlight border-highlight/20'
-                          : 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20'
+                          : 'bg-featured/10 text-featured border-featured/20'
                       }`}>
                         {isActive ? 'ACTIVE_STATION' : 'KEY_DEPLOYMENT'}
                       </span>
@@ -85,7 +85,7 @@ export const ExperienceItem = ({ experience }: { experience: Experience }) => {
                       className={`inline-flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-wider transition-colors group/link underline-offset-4 hover:underline ${
                         isActive
                           ? 'text-highlight hover:text-highlight/80'
-                          : 'text-cyan-500/80 hover:text-cyan-500'
+                          : 'text-featured/80 hover:text-featured'
                       }`}
                     >
                       <Globe size={10} className={isActive ? 'animate-pulse' : 'group-hover/link:animate-pulse'} />

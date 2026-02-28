@@ -8,8 +8,12 @@
   /* Navbar Glass Effect */
   --nav-bg: rgba(255, 255, 255, 0.7);
 
+  /* Emerald - Standard Highlight */
   --highlight: 142 71% 45%;
   --highlight-foreground: 0 0% 100%;
+
+  /* Cyan - Featured Anchor */
+  --featured: 188 86% 40%;
 
   --muted: #71717a;
   --accent: #18181b;
@@ -22,7 +26,11 @@
   --background: #09090b;
   --foreground: #ededed;
 
+  /* Emerald */
   --highlight: 142 76% 40%;
+
+  /* Cyan - Brighter for Dark Mode contrast */
+  --featured: 188 90% 50%;
 
   --nav-bg: rgba(9, 9, 11, 0.8);
   --muted: #a1a1aa;
@@ -39,6 +47,10 @@
   --color-foreground: var(--foreground);
   --color-highlight: hsl(var(--highlight));
   --color-highlight-foreground: hsl(var(--highlight-foreground));
+
+  /* Mapping the new featured color */
+  --color-featured: hsl(var(--featured));
+
   --color-nav: var(--nav-bg);
   --color-muted: var(--muted);
   --color-accent: var(--accent);

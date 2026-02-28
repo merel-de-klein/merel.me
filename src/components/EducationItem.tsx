@@ -6,18 +6,18 @@ export const EducationItem = ({ item }: { item: Education }) => {
   const isCyan = item.isFeatured;
 
   const theme = {
-    text: isCyan ? 'text-cyan-500' : 'text-highlight',
-    border: isCyan ? 'border-cyan-500/40' : 'border-highlight/40',
+    text: isCyan ? 'text-featured' : 'text-highlight',
+    border: isCyan ? 'border-featured/40' : 'border-highlight/40',
     dot: isCyan
-      ? 'bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.8)]'
+      ? 'bg-featured shadow-[0_0_10px_rgba(6,182,212,0.8)]'
       : 'bg-highlight shadow-[0_0_10px_rgba(16,185,129,0.8)]',
     badge: isCyan
-      ? 'bg-cyan-500/10 border-cyan-500/20'
+      ? 'bg-featured/10 border-featured/20'
       : 'bg-highlight/10 border-highlight/20',
     scoreBg: isCyan
-      ? 'bg-cyan-500/5 border-cyan-500/20'
+      ? 'bg-featured/5 border-featured/20'
       : 'bg-highlight/5 border-highlight/20',
-    icon: isCyan ? 'text-cyan-500/30' : 'text-highlight/30',
+    icon: isCyan ? 'text-featured/30' : 'text-highlight/30',
   };
 
   return (
@@ -25,7 +25,9 @@ export const EducationItem = ({ item }: { item: Education }) => {
       <div className="lg:col-span-4 space-y-4">
         <div className="space-y-1">
           <span
-            className={`text-[10px] font-black uppercase tracking-[0.3em] transition-colors ${isCyan ? 'text-cyan-500/60' : 'text-highlight/60'}`}
+            className={`text-[10px] font-black uppercase tracking-[0.3em] transition-colors ${
+              isCyan ? 'text-featured/60' : 'text-highlight/60'
+            }`}
           >
             {item.type}_RECORD
           </span>
@@ -51,18 +53,12 @@ export const EducationItem = ({ item }: { item: Education }) => {
       <div className="lg:col-span-8">
         <div
           className={`relative pl-8 border-l transition-all duration-500 ${
-            isCyan
-              ? theme.border
-              : isPrimary
-                ? 'border-highlight/40'
-                : 'border-border/60'
+            isCyan ? theme.border : isPrimary ? 'border-highlight/40' : 'border-border/60'
           }`}
         >
           <div
             className={`absolute -left-[5px] top-1.5 w-[9px] h-[9px] rounded-full transition-all duration-500 ${
-              isCyan || isPrimary
-                ? theme.dot
-                : 'bg-border group-hover:bg-highlight'
+              isCyan || isPrimary ? theme.dot : 'bg-border group-hover:bg-highlight'
             } ${isPrimary && !isCyan ? 'animate-pulse' : ''}`}
           />
 
@@ -72,9 +68,7 @@ export const EducationItem = ({ item }: { item: Education }) => {
                 {item.degree}
               </h4>
               {item.field && (
-                <p
-                  className={`text-sm font-mono tracking-wide uppercase font-bold ${theme.text} opacity-80`}
-                >
+                <p className={`text-sm font-mono tracking-wide uppercase font-bold transition-colors ${theme.text} opacity-80`}>
                   Field: {item.field}
                 </p>
               )}
@@ -85,16 +79,12 @@ export const EducationItem = ({ item }: { item: Education }) => {
                 {item.score.map((s) => (
                   <div
                     key={s.label}
-                    className={`${theme.scoreBg} px-3 py-2 rounded-sm min-w-[90px] transition-colors`}
+                    className={`${theme.scoreBg} px-3 py-2 rounded-sm min-w-[90px] transition-all hover:bg-opacity-10`}
                   >
-                    <span
-                      className={`text-[9px] font-mono block leading-none mb-1.5 tracking-widest uppercase opacity-60 ${theme.text}`}
-                    >
+                    <span className={`text-[9px] font-mono block leading-none mb-1.5 tracking-widest uppercase opacity-60 ${theme.text}`}>
                       {s.label}
                     </span>
-                    <span
-                      className={`text-xl font-black font-mono leading-none tracking-tighter ${theme.text}`}
-                    >
+                    <span className={`text-xl font-black font-mono leading-none tracking-tighter ${theme.text}`}>
                       {s.value}
                     </span>
                   </div>
@@ -104,23 +94,16 @@ export const EducationItem = ({ item }: { item: Education }) => {
 
             <ul className="space-y-2">
               {item.details.map((detail, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed font-medium"
-                >
-                  <span
-                    className={`mt-1.5 w-1 h-1 shrink-0 rounded-full ${isCyan ? 'bg-cyan-500/40' : 'bg-highlight/40'}`}
-                  />
+                <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed font-medium transition-colors group-hover:text-foreground/80">
+                  <span className={`mt-1.5 w-1 h-1 shrink-0 rounded-full transition-colors ${isCyan ? 'bg-featured/40' : 'bg-highlight/40'}`} />
                   {detail}
                 </li>
               ))}
             </ul>
 
             {item.honors && (
-              <div
-                className={`inline-flex items-center gap-2 px-3 py-1.5 border font-black uppercase tracking-[0.2em] rounded-sm text-[10px] shadow-sm ${theme.badge} ${theme.text}`}
-              >
-                <Award size={12} />
+              <div className={`inline-flex items-center gap-2 px-3 py-1.5 border font-black uppercase tracking-[0.2em] rounded-sm text-[10px] shadow-sm transition-all ${theme.badge} ${theme.text}`}>
+                <Award size={12} className="opacity-80" />
                 Honors: {item.honors}
               </div>
             )}

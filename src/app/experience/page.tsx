@@ -1,8 +1,7 @@
 import { AboutBriefSection } from '@/components/sections/AboutBriefSection';
 import { CurrentPositionSection } from '@/components/sections/CurrentPositionSection';
-import { personalInfo } from '@/constants/site';
-import { WorkExperienceSection } from './_sections/WorkExperienceSection';
 import { EducationSection } from './_sections/EducationSection';
+import { WorkExperienceSection } from './_sections/WorkExperienceSection';
 
 export default function ExperiencePage() {
   return (
