@@ -40,7 +40,7 @@ export const Footer = () => {
         </div>
 
         <div className="text-right flex flex-col gap-2">
-          <div className="flex items-center justify-end gap-3">
+          <div className="flex flex-col md:flex-row items-center justify-end gap-3">
             <div className="opacity-20 hover:opacity-100 transition-opacity duration-500">
               <Blackbird />
             </div>
