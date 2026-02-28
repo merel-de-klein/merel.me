@@ -2,6 +2,7 @@ import { ContactSection } from '@/components/sections/ContactSection';
 import { CurrentMediaSection } from '@/components/sections/CurrentMediaSection';
 import { CurrentPositionSection } from '@/components/sections/CurrentPositionSection';
 import { personalInfo } from '@/constants/site';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 export default function AboutPage() {
@@ -132,3 +133,18 @@ export default function AboutPage() {
     </main>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: `Personal profile of ${personalInfo.name}. Learn about my journey in software engineering, my love for gaming collections, and my work with React and TypeScript.`,
+  openGraph: {
+    title: `About | ${personalInfo.name}`,
+    description: `Explorer of code and collector of stories. Discover the background and interests of ${personalInfo.name}.`,
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `About ${personalInfo.name}`,
+    description: `Software engineer by day, curator of the Stash by night. Get to know ${personalInfo.name}.`,
+  },
+};
