@@ -16,7 +16,7 @@ export const CurrentPositionSection = ({ index }: { index: number }) => {
     .replace(/ /g, ' ');
 
   return (
-    <section className="py-16 border-y border-border/40">
+    <section className="py-16 border-b border-border/40">
       <SectionHeader
         index={index}
         title="Current Position"
