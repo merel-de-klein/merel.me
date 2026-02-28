@@ -1,4 +1,4 @@
-import { CurrentMediaSection } from '@/app/_sections/CurrentMediaSection';
+import { CurrentMediaSection } from '@/components/sections/CurrentMediaSection';
 import { AboutBriefSection } from '@/components/sections/AboutBriefSection';
 import { CurrentPositionSection } from '@/components/sections/CurrentPositionSection';
 
