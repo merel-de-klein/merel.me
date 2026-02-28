@@ -27,7 +27,7 @@ export default async function StashItemPage({
           { label: item.title, href: getStashItemUrl(item) },
         ]}
         icon={item.group.iconName}
-        meta={`Updated ${new Date(item.updatedAt).toLocaleDateString('en-US', {
+        meta={`Updated ${new Date(item.updated_at).toLocaleDateString('en-US', {
           month: 'short',
           year: 'numeric',
         })}`}
