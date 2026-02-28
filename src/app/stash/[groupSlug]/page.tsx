@@ -1,6 +1,9 @@
 import { getStashByGroup } from '@/api/stash';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { getGroupUrl } from '@/utils/nav-utils';
 import { getGroupBySlug } from '@/utils/stash-utils';
 import * as Icons from 'lucide-react';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import StashListClient from './_sections/StashListClient';
 
@@ -24,18 +27,11 @@ export default async function StashGroupPage({
             {Icon && <Icon size={400} strokeWidth={1} />}
           </div>
 
-          <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-6 mb-12 relative z-10">
-            <div className="flex items-center gap-4">
-              {Icon && <Icon size={16} className="text-zinc-400" />}
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                Archive / {group.slug}
-              </span>
-            </div>
-
-            <span className="text-[11px] font-medium text-zinc-400">
-              {items.length} Total Records
-            </span>
-          </div>
+          <Breadcrumbs
+            crumbs={[{ label: group.name, href: getGroupUrl(group) }]}
+            icon={group.iconName}
+            meta={items.length + ' Total Records'}
+          />
 
           <div className="relative z-10">
             <h1 className="text-7xl md:text-9xl font-extrabold tracking-tighter text-zinc-900 dark:text-zinc-100">
@@ -51,4 +47,39 @@ export default async function StashGroupPage({
       </div>
     </main>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ groupSlug: string }>;
+}): Promise<Metadata> {
+  const { groupSlug } = await params;
+  const group = getGroupBySlug(groupSlug);
+
+  if (!group) {
+    return {
+      title: 'Stash Not Found',
+      description: 'The requested stash does not exist.',
+    };
+  }
+
+  const items = await getStashByGroup(group.id);
+  const itemCount = items.length;
+
+  return {
+    title: `${group.name} Stash`,
+    description: group.description || `Exploring the ${group.name} stash containing ${itemCount} curated items.`,
+    openGraph: {
+      title: `${group.name} Digital Archive`,
+      description: `A curated stash of ${itemCount} entries in ${group.name}.`,
+      type: 'website',
+      images: items.length > 0 ? [{ url: items[0].imageUrl }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${group.name} Stash`,
+      description: `Browsing ${itemCount} items in ${group.name}.`,
+    },
+  };
 }
