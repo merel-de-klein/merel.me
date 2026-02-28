@@ -37,6 +37,7 @@ export interface StashItem {
   isFavorite?: boolean;
   imageUrl: string;
   tagIds: number[];
+  updatedAt: string;
 }
 
 export interface StashItemEnriched extends StashItem {

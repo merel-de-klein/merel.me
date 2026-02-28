@@ -106,6 +106,7 @@ export const stashItems: StashItem[] = [
     isFavorite: true,
     tagIds: [1, 100, 104, 203],
     imageUrl: '/images/fire-emblem.jpg',
+    updatedAt: '2023-11-14',
   },
   {
     id: 2,
@@ -118,6 +119,7 @@ export const stashItems: StashItem[] = [
     isFavorite: true,
     tagIds: [3, 101, 200, 205],
     imageUrl: '/images/layton-miracle-mask.jpg',
+    updatedAt: '2024-01-22',
   },
   {
     id: 3,
@@ -130,6 +132,7 @@ export const stashItems: StashItem[] = [
     isFavorite: true,
     tagIds: [106, 107],
     imageUrl: '/images/dispossessed.jpg',
+    updatedAt: '2024-03-05',
   },
   {
     id: 4,
@@ -142,6 +145,7 @@ export const stashItems: StashItem[] = [
     isFavorite: true,
     tagIds: [202, 205],
     imageUrl: '/images/in-rainbows.jpg',
+    updatedAt: '2024-05-18',
   },
   {
     id: 5,
@@ -154,6 +158,7 @@ export const stashItems: StashItem[] = [
     isFavorite: false,
     tagIds: [103, 201],
     imageUrl: '/images/metroid-dread.jpg',
+    updatedAt: '2024-06-12',
   },
   {
     id: 6,
@@ -166,6 +171,7 @@ export const stashItems: StashItem[] = [
     isFavorite: true,
     tagIds: [5, 202, 203],
     imageUrl: '/images/spirited-away.jpg',
+    updatedAt: '2024-08-30',
   },
   {
     id: 7,
@@ -178,6 +184,7 @@ export const stashItems: StashItem[] = [
     isFavorite: false,
     tagIds: [100, 201],
     imageUrl: '/images/root.jpg',
+    updatedAt: '2024-10-10',
   },
   {
     id: 8,
@@ -190,6 +197,7 @@ export const stashItems: StashItem[] = [
     isFavorite: false,
     tagIds: [105],
     imageUrl: '/images/nitro-deck.jpg',
+    updatedAt: '2024-11-25',
   },
   {
     id: 9,
@@ -202,6 +210,7 @@ export const stashItems: StashItem[] = [
     isFavorite: false,
     tagIds: [102, 201, 203],
     imageUrl: '/images/elden-ring.jpg',
+    updatedAt: '2025-01-15',
   },
   {
     id: 10,
@@ -214,5 +223,6 @@ export const stashItems: StashItem[] = [
     isFavorite: true,
     tagIds: [2, 102, 202],
     imageUrl: '/images/pokemon-platinum.jpg',
+    updatedAt: '2025-02-20',
   }
 ];
