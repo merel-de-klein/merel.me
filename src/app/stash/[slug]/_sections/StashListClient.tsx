@@ -2,15 +2,16 @@
 
 import StashCard from '@/components/StashCard';
 import { statuses } from '@/lib/stash-data';
+import { Group, StashItemEnriched } from '@/types/stash';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 
 export default function StashListClient({
-  items,
   group,
+  items,
 }: {
-  items: any[];
-  group: any;
+  group: Group;
+  items: StashItemEnriched[];
 }) {
   const [activeFilterId, setActiveFilterId] = useState<number | 'All'>('All');
 
@@ -102,11 +103,7 @@ export default function StashListClient({
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <StashCard
-                  item={item}
-                  category={item.category}
-                  status={item.status}
-                />
+                <StashCard item={item} />
               </motion.div>
             ))
           ) : (

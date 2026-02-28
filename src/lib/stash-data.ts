@@ -104,7 +104,7 @@ export const stashItems: StashItem[] = [
     creator: 'Intelligent Systems',
     thoughts: 'A masterclass in tactical RPG design. The pairing system is broken, but the characters are unforgettable.',
     isFavorite: true,
-    tags: [1, 100, 104, 203],
+    tagIds: [1, 100, 104, 203],
     imageUrl: '/images/fire-emblem.jpg',
   },
   {
@@ -116,7 +116,7 @@ export const stashItems: StashItem[] = [
     creator: 'Level-5',
     thoughts: 'The transition to 3D models was jarring at first, but the puzzle design is as sharp as ever.',
     isFavorite: true,
-    tags: [3, 101, 200, 205],
+    tagIds: [3, 101, 200, 205],
     imageUrl: '/images/layton-miracle-mask.jpg',
   },
   {
@@ -128,7 +128,7 @@ export const stashItems: StashItem[] = [
     creator: 'Ursula K. Le Guin',
     thoughts: 'An incredible examination of anarcho-syndicalism vs. capitalism. Very dense but rewarding.',
     isFavorite: true,
-    tags: [106, 107],
+    tagIds: [106, 107],
     imageUrl: '/images/dispossessed.jpg',
   },
   {
@@ -140,7 +140,7 @@ export const stashItems: StashItem[] = [
     creator: 'Radiohead',
     thoughts: 'The quintessential late-night spin. "Nude" sounds incredible on this pressing.',
     isFavorite: true,
-    tags: [202, 205],
+    tagIds: [202, 205],
     imageUrl: '/images/in-rainbows.jpg',
   },
   {
@@ -152,7 +152,7 @@ export const stashItems: StashItem[] = [
     creator: 'MercurySteam',
     thoughts: 'Waiting for a rainy weekend to dive into this one properly.',
     isFavorite: false,
-    tags: [103, 201],
+    tagIds: [103, 201],
     imageUrl: '/images/metroid-dread.jpg',
   },
   {
@@ -164,7 +164,7 @@ export const stashItems: StashItem[] = [
     creator: 'Studio Ghibli',
     thoughts: 'Visual perfection. Every frame is a painting. A staple of the permanent collection.',
     isFavorite: true,
-    tags: [5, 202, 203],
+    tagIds: [5, 202, 203],
     imageUrl: '/images/spirited-away.jpg',
   },
   {
@@ -176,7 +176,7 @@ export const stashItems: StashItem[] = [
     creator: 'Leder Games',
     thoughts: 'Learning the rules for the Woodland Alliance. The asymmetrical mechanics are fascinating.',
     isFavorite: false,
-    tags: [100, 201],
+    tagIds: [100, 201],
     imageUrl: '/images/root.jpg',
   },
   {
@@ -188,7 +188,7 @@ export const stashItems: StashItem[] = [
     creator: 'CRKD',
     thoughts: 'Testing out the hall effect sensors. Makes the Switch feel like a proper professional handheld.',
     isFavorite: false,
-    tags: [105],
+    tagIds: [105],
     imageUrl: '/images/nitro-deck.jpg',
   },
   {
@@ -200,7 +200,7 @@ export const stashItems: StashItem[] = [
     creator: 'FromSoftware',
     thoughts: 'I know I am going to die repeatedly, and I am mentally preparing for the task.',
     isFavorite: false,
-    tags: [102, 201, 203],
+    tagIds: [102, 201, 203],
     imageUrl: '/images/elden-ring.jpg',
   },
   {
@@ -212,7 +212,7 @@ export const stashItems: StashItem[] = [
     creator: 'Game Freak',
     thoughts: 'The definitive Sinnoh experience. Replaying this for the pure nostalgia of the underground.',
     isFavorite: true,
-    tags: [2, 102, 202],
+    tagIds: [2, 102, 202],
     imageUrl: '/images/pokemon-platinum.jpg',
   }
 ];

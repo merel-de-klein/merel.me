@@ -36,6 +36,12 @@ export interface StashItem {
   thoughts: string;
   isFavorite?: boolean;
   imageUrl: string;
-  tags: number[];
-  itemTags?: Tag[];
+  tagIds: number[];
+}
+
+export interface StashItemEnriched extends StashItem {
+  group: Group;
+  category: Category;
+  tags: Tag[];
+  status: Status;
 }

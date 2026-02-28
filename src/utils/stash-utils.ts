@@ -17,6 +17,10 @@ export const getGroupBySlug = (slug: string): Group | undefined => {
   return groups.find((g) => g.slug === slug);
 };
 
+export const getGroupById = (id: number): Group | undefined => {
+  return groups.find((g) => g.id === id);
+};
+
 export const getCategoriesByGroup = (groupId: number): Category[] => {
   return categories.filter((cat) => cat.groupId === groupId);
 };
