@@ -20,7 +20,7 @@ export default async function StashGroupPage({
   const Icon = (Icons as any)[group.iconName] || Icons.HelpCircle;
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 space-y-24">
+    <div className="max-w-7xl mx-auto px-6 py-12 space-y-24">
       <div className="max-w-7xl mx-auto">
         <header className="mb-24 relative">
           <div className="absolute -top-12 right-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
@@ -45,7 +45,7 @@ export default async function StashGroupPage({
 
         <StashListClient group={group} items={items} />
       </div>
-    </main>
+    </div>
   );
 }
 

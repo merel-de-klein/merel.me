@@ -4,7 +4,7 @@ import { CurrentPositionSection } from './_sections/CurrentPositionSection';
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 space-y-24">
+    <div className="max-w-7xl mx-auto px-6 py-12 space-y-24">
       <section className="max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-black text-accent uppercase tracking-tighter leading-[0.9]">
           Frontend Dev <br />
@@ -22,6 +22,6 @@ export default function Home() {
       <AboutBriefSection index={1} />
 
       <CurrentMediaSection index={2} />
-    </main>
+    </div>
   );
 }

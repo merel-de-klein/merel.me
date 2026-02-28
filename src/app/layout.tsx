@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-y-scroll">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -56,13 +56,15 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           value={{
-            light: "light",
-            dark: "dark"
+            light: 'light',
+            dark: 'dark',
           }}
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

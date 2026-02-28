@@ -20,7 +20,7 @@ export default async function StashItemPage({
   const Icon = (Icons as any)[item.group.iconName] || Icons.HelpCircle;
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 space-y-24">
+    <div className="max-w-7xl mx-auto px-6 py-12 space-y-24">
       <Breadcrumbs
         crumbs={[
           { label: item.group.name, href: getGroupUrl(item.group) },
@@ -143,7 +143,7 @@ export default async function StashItemPage({
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 
