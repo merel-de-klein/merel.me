@@ -9,8 +9,8 @@ export const siteConfig = {
 };
 
 export const cvConfig = {
-  location: '/merel-de-klein-cv-public.pdf',
-  fileName: '/CV_Merel_de_Klein_Public.pdf',
+  location: '/merel-de-klein-cv.pdf',
+  fileName: 'CV_Merel_de_Klein.pdf',
 }
 
 export const personalInfo = {
