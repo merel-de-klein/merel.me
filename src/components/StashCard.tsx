@@ -1,39 +1,21 @@
-'use client';
-
 import { StashItemEnriched } from '@/types/stash';
 import { getStashItemUrl } from '@/utils/nav-utils';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import StashImage from './StashImage';
+import { Star } from 'lucide-react';
 
 export default function StashCard({ item }: { item: StashItemEnriched }) {
-  const [imgSrc, setImgSrc] = useState(
-    item.imageUrl || '/images/placeholder.svg',
-  );
-
   return (
     <Link
       className="group relative flex flex-col md:flex-row bg-white dark:bg-zinc-900/50 border border-zinc-100 dark:border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] h-full"
       href={getStashItemUrl(item)}
     >
       <div className="relative w-full md:w-[280px] shrink-0 bg-zinc-100 dark:bg-black overflow-hidden h-[320px] md:h-auto border-r border-zinc-100 dark:border-white/5">
-        <Image
-          src={imgSrc}
-          alt={item.title}
-          fill
-          priority
-          sizes="280px"
-          className={`object-cover transition-transform duration-1000 group-hover:scale-110 ${
-            imgSrc.includes('placeholder')
-              ? 'opacity-20 grayscale'
-              : 'opacity-100'
-          }`}
-          onError={() => setImgSrc('/images/placeholder.svg')}
-        />
+        <StashImage src={item.imageUrl} alt={item.title} />
 
         {item.isFavorite && (
-          <div className="absolute top-6 left-8 z-20 scale-150 drop-shadow-[0_0_10px_rgba(251,191,36,0.8)] animate-[pulse_2s_infinite]">
-            ⭐
+          <div className="absolute top-4 right-4 bg-white/90 dark:bg-black/90 p-2 rounded-full">
+            <Star size={16} className="fill-yellow-400 text-yellow-400" />
           </div>
         )}
 
