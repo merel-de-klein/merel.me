@@ -1,4 +1,4 @@
-import { Education, Experience } from "@/types/experience";
+import { Education, Experience } from '@/types/experience';
 
 export const currentPosition = {
   started: new Date('2022-10-01'),
@@ -7,11 +7,58 @@ export const currentPosition = {
   description: `Currently focused on modernizing the web architecture for the world's
   largest 3D printing community. Bridging legacy systems with modern
   React patterns.`,
-  closingStatement: 'Building the infrastructure for the next generation of makers.',
+  closingStatement:
+    'Building the infrastructure for the next generation of makers.',
   location: 'Utrecht, NL',
   stack: ['React', 'TypeScript', 'SCSS'],
   projectSite: 'https://www.thingiverse.com',
 };
+
+export const languages = [
+  {
+    label: 'Dutch',
+    value: 'Native_Level',
+    status: 'DEFAULT',
+    type: 'Primary_Language',
+  },
+  {
+    label: 'English',
+    value: 'C2_Proficiency',
+    status: 'CERTIFIED',
+    type: 'Secondary_Language',
+  },
+];
+
+export const tools = [
+  {
+    category: 'Languages_&_Frameworks',
+    items:
+      'React, TypeScript, Vue.js, JavaScript, HTML, SASS/SCSS, CSS, NodeJS, SQL',
+  },
+  {
+    category: 'Methodology_&_CMS',
+    items: 'Agile/Scrum, UX/UI Design, Next.js, Contentful',
+  },
+  {
+    category: 'Validation_Protocols',
+    items: 'Unit testing (Jest, Cypress)',
+  },
+];
+
+export const softSkills = [
+  {
+    label: 'Team_Integration',
+    detail: 'Collaborative development within cross-functional teams',
+  },
+  {
+    label: 'Detail_Precision',
+    detail: 'Problem-oriented approach with a focus on high-fidelity output',
+  },
+  {
+    label: 'Evolution_Logic',
+    detail: 'Rapid knowledge acquisition and continuous growth mindset',
+  },
+];
 
 export const workExperience: Experience[] = [
   {
@@ -24,13 +71,14 @@ export const workExperience: Experience[] = [
     positions: [
       {
         title: 'Software Developer',
-        description: 'Transitioning the platform following the acquisition by MyMiniFactory. Responsible for frontend development and providing technical support to the team during the transition phase.',
+        description:
+          'Transitioning the platform following the acquisition by MyMiniFactory. Responsible for frontend development and providing technical support to the team during the transition phase.',
         startedAt: '2026-02-01',
         stack: ['React', 'TypeScript', 'Sass'],
         isHighlight: true,
-        websiteUrl: 'https://www.thingiverse.com'
-      }
-    ]
+        websiteUrl: 'https://www.thingiverse.com',
+      },
+    ],
   },
   {
     id: 'ultimaker',
@@ -42,21 +90,23 @@ export const workExperience: Experience[] = [
     positions: [
       {
         title: 'Software Developer (Thingiverse)',
-        description: 'Full-time focus on thingiverse.com. Modernized core React architecture and optimized performance.',
+        description:
+          'Full-time focus on thingiverse.com. Modernized core React architecture and optimized performance.',
         startedAt: '2022-10-01',
         endedAt: '2026-01-31',
         stack: ['React', 'TypeScript', 'Sass'],
         isHighlight: true,
-        websiteUrl: 'https://www.thingiverse.com'
+        websiteUrl: 'https://www.thingiverse.com',
       },
       {
         title: 'Software Developer',
-        description: 'Developed marketing and subscription-lifecycle web platforms using a headless architecture.',
+        description:
+          'Developed marketing and subscription-lifecycle web platforms using a headless architecture.',
         startedAt: '2021-10-01',
         endedAt: '2022-09-30',
         stack: ['React', 'TypeScript', 'Next.js', 'Contentful'],
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'databalk',
@@ -68,12 +118,13 @@ export const workExperience: Experience[] = [
     positions: [
       {
         title: 'Software Developer',
-        description: 'Contributed to new and existing products within the development team. Responsibilities spanned design, frontend, back-end, and unit testing. Also served as a mentor for an intern.',
+        description:
+          'Contributed to new and existing products within the development team. Responsibilities spanned design, frontend, back-end, and unit testing. Also served as a mentor for an intern.',
         startedAt: '2018-09-01',
         endedAt: '2021-09-01',
         stack: ['Vue.js', 'Node.js', 'XDoc'],
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'cc4skype',
@@ -85,12 +136,13 @@ export const workExperience: Experience[] = [
     positions: [
       {
         title: 'Graduation Intern',
-        description: 'Developed a full-stack solution for caller ID recognition and contact history display for call center environments.',
+        description:
+          'Developed a full-stack solution for caller ID recognition and contact history display for call center environments.',
         startedAt: '2018-02-01',
         endedAt: '2018-06-30',
         stack: ['AngularJS', 'TypeScript', 'C#'],
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'kubion-early',
@@ -102,20 +154,22 @@ export const workExperience: Experience[] = [
     positions: [
       {
         title: 'Software Developer (Summer)',
-        description: 'Refined and expanded the product developed during the previous internship period.',
+        description:
+          'Refined and expanded the product developed during the previous internship period.',
         startedAt: '2017-07-01',
         endedAt: '2017-08-31',
         stack: ['AngularJS', 'XDoc'],
       },
       {
         title: 'Intern',
-        description: 'Developed tools for processing and editing decision and rule tables within the management application.',
+        description:
+          'Developed tools for processing and editing decision and rule tables within the management application.',
         startedAt: '2016-09-01',
         endedAt: '2017-01-31',
         stack: ['AngularJS', 'XDoc'],
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
 
 export const educationHistory: Education[] = [
@@ -131,13 +185,13 @@ export const educationHistory: Education[] = [
     score: [
       { label: 'GRADE', value: 'A' },
       { label: 'OVERALL', value: '222' },
-      { label: 'CEFR', value: 'C2' }
+      { label: 'CEFR', value: 'C2' },
     ],
     details: [
       'Highest level English qualification (Level 3 Certificate)',
       'Demonstrated master-level command of the English language',
-      'Certificate obtained'
-    ]
+      'Certificate obtained',
+    ],
   },
   {
     id: 'hu-bachelor',
@@ -154,7 +208,7 @@ export const educationHistory: Education[] = [
       'Specialization: Frontend Development',
       'Minor: English Language and Culture',
       'Bachelor of Science degree obtained',
-      'Graduated Cum Laude'
+      'Graduated Cum Laude',
     ],
     honors: 'Cum_Laude_Verified',
   },
@@ -169,8 +223,8 @@ export const educationHistory: Education[] = [
     details: [
       'Course: Introduction to programming with Java',
       'Successfully prepared for higher vocational education',
-      'Certificate obtained'
-    ]
+      'Certificate obtained',
+    ],
   },
   {
     id: 'revius-havo',
@@ -183,7 +237,7 @@ export const educationHistory: Education[] = [
     details: [
       'Profile: Nature & Technology / Nature & Health',
       'Key Subjects: Biology, Physics, Chemistry, Mathematics B & D',
-      'Diploma obtained'
-    ]
-  }
+      'Diploma obtained',
+    ],
+  },
 ];
