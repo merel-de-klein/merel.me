@@ -2,8 +2,7 @@ export const siteConfig = {
   description:
   'A curated collection of media, projects, and professional experience.',
   links: {
-    github: 'https://github.com/merel-de-klein',
-    githubRepo: 'https://github.com/merel-de-klein/merel.me',
+    github: 'https://github.com/merel-de-klein/merel.me',
     linkedin: 'https://www.linkedin.com/in/merel-de-klein'
   },
 };
