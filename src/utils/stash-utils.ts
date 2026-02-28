@@ -1,12 +1,28 @@
-import { STATUS_VERBS } from "@/constants/stash";
-import { categories, statuses } from "@/lib/stash-data";
-import { StashItem } from "@/types/stash";
+import { STATUS_VERBS } from '@/constants/stash';
+import { categories, groups, statuses } from '@/lib/stash-data';
+import { Category, Group, StashItem, Status } from '@/types/stash';
 
 export const getStashItemStatus = (item: StashItem): string => {
-  const category = categories.find(c => c.id === item.categoryId);
-  const status = statuses.find(s => s.id === item.statusId);
+  const category = categories.find((c) => c.id === item.categoryId);
+  const status = statuses.find((s) => s.id === item.statusId);
 
-  const verb = category ? STATUS_VERBS[category.groupId]?.[item.statusId] : status?.name;
+  const verb = category
+    ? STATUS_VERBS[category.groupId]?.[item.statusId]
+    : status?.name;
 
-  return verb || status?.name || "Unknown";
+  return verb || status?.name || 'Unknown';
 };
+
+export const getGroupBySlug = (slug: string): Group | undefined => {
+  return groups.find((g) => g.slug === slug);
+};
+
+export const getCategoriesByGroup = (groupId: number): Category[] => {
+  return categories.filter((cat) => cat.groupId === groupId);
+};
+
+export const getCategoryById = (categoryId: number): Category | undefined =>
+  categories.find((cat) => cat.id === categoryId);
+
+export const getStatusById = (statusId: number): Status | undefined =>
+  statuses.find((status) => status.id === statusId);

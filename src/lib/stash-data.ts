@@ -1,11 +1,46 @@
 import { Category, Group, StashItem, Status, Tag } from "@/types/stash";
 
 export const groups: Group[] = [
-  { id: 1, name: 'Gaming', slug: 'gaming' },
-  { id: 2, name: 'Reading', slug: 'reading' },
-  { id: 3, name: 'Hobbies', slug: 'hobbies' },
-  { id: 4, name: 'Video', slug: 'video' },
-  { id: 5, name: 'Music', slug: 'music' },
+  {
+    id: 1,
+    name: 'Gaming',
+    slug: 'gaming',
+    description: 'Video games on a variety of consoles, or good old-fashioned board games.',
+    accentColor: 'text-red-500',
+    iconName: 'Gamepad2'
+  },
+  {
+    id: 2,
+    name: 'Reading',
+    slug: 'reading',
+    description: 'Working my way through the ever growing pile of paper in my house.',
+    accentColor: 'text-emerald-500',
+    iconName: 'BookOpenText'
+  },
+  {
+    id: 3,
+    name: 'Hobbies',
+    slug: 'hobbies',
+    description: 'The "everything else" bin. Mechanical keyboards, tech peripherals, and whatever project I\'m currently hyper-focusing on.',
+    accentColor: 'text-slate-400',
+    iconName: 'Wrench'
+  },
+  {
+    id: 4,
+    name: 'Video',
+    slug: 'video',
+    description: 'A collection of blu-rays and dvds, to protect against steaming services. (and a digital collection I definitely did not pirate)',
+    accentColor: 'text-indigo-500',
+    iconName: 'Film'
+  },
+  {
+    id: 5,
+    name: 'Music',
+    slug: 'music',
+    description: 'Tunes to write code to.',
+    accentColor: 'text-zinc-400',
+    iconName: 'Disc3'
+  },
 ];
 
 export const categories: Category[] = [

@@ -2,6 +2,9 @@ export interface Group {
   id: number;
   name: string;
   slug: string;
+  description: string;
+  accentColor: string;
+  iconName: string;  // Name of the Lucide icon for navigation
 }
 
 export interface Category {
@@ -34,4 +37,5 @@ export interface StashItem {
   isFavorite?: boolean;
   imageUrl: string;
   tags: number[];
+  itemTags?: Tag[];
 }
