@@ -1,7 +1,9 @@
 import { ArrowUpRight, Star } from 'lucide-react';
+import Link from 'next/link';
 
 interface ItemSummaryProps {
   index?: number;
+  href: string;
   title: string;
   by?: string;
   description?: string;
@@ -11,6 +13,7 @@ interface ItemSummaryProps {
 
 export const SummaryListItem = ({
   index,
+  href,
   title,
   by,
   description,
@@ -18,8 +21,10 @@ export const SummaryListItem = ({
   isFavorite
 }: ItemSummaryProps) => {
   return (
-    <div className="group relative flex flex-col md:flex-row md:items-center gap-6 py-10 border-b border-border/50 hover:border-accent transition-all duration-500 cursor-pointer">
-
+    <Link
+      className="group relative flex flex-col md:flex-row md:items-center gap-6 py-10 border-b border-border/50 hover:border-accent transition-all duration-500 cursor-pointer"
+      href={href}
+    >
       <div className="flex gap-6 flex-[2] min-w-0">
         {index !== undefined && (
           <span className="text-[11px] font-black text-accent/20 uppercase tracking-[0.4em] pt-1">
@@ -68,6 +73,6 @@ export const SummaryListItem = ({
 
       {/* Background Hover Effect */}
       <div className="absolute inset-0 bg-accent/[0.01] opacity-0 group-hover:opacity-100 transition-opacity -z-10 rounded-[2rem]" />
-    </div>
+    </Link>
   );
 };

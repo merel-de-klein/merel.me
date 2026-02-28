@@ -1,12 +1,12 @@
 import { groups } from '@/lib/stash-data';
-import { StashItem } from '@/types/stash';
-import { getGroupUrl } from '@/utils/nav-utils';
+import { StashItemEnriched } from '@/types/stash';
+import { getGroupUrl, getStashItemUrl } from '@/utils/nav-utils';
 import { getStashItemStatus } from '@/utils/stash-utils';
 import Link from 'next/link';
 import { SummaryListItem } from './SummaryListItem';
 
 interface CurrentMediaListProps {
-  items: StashItem[];
+  items: StashItemEnriched[];
   index: number;
 }
 
@@ -23,6 +23,7 @@ export const StashItemList = ({
           <SummaryListItem
             key={i}
             index={i + 1}
+            href={getStashItemUrl(item)}
             title={item.title}
             by={item.creator}
             description={item.thoughts}

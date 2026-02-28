@@ -1,14 +1,21 @@
 'use client';
 
 import { StashItemEnriched } from '@/types/stash';
+import { getStashItemUrl } from '@/utils/nav-utils';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function StashCard({ item }: { item: StashItemEnriched }) {
-  const [imgSrc, setImgSrc] = useState(item.imageUrl || '/images/placeholder.svg');
+  const [imgSrc, setImgSrc] = useState(
+    item.imageUrl || '/images/placeholder.svg',
+  );
 
   return (
-    <div className="group relative flex flex-col md:flex-row bg-white dark:bg-zinc-900/50 border border-zinc-100 dark:border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] h-full">
+    <Link
+      className="group relative flex flex-col md:flex-row bg-white dark:bg-zinc-900/50 border border-zinc-100 dark:border-white/5 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] h-full"
+      href={getStashItemUrl(item)}
+    >
       <div className="relative w-full md:w-[280px] shrink-0 bg-zinc-100 dark:bg-black overflow-hidden h-[320px] md:h-auto border-r border-zinc-100 dark:border-white/5">
         <Image
           src={imgSrc}
@@ -17,7 +24,9 @@ export default function StashCard({ item }: { item: StashItemEnriched }) {
           priority
           sizes="280px"
           className={`object-cover transition-transform duration-1000 group-hover:scale-110 ${
-            imgSrc.includes('placeholder') ? 'opacity-20 grayscale' : 'opacity-100'
+            imgSrc.includes('placeholder')
+              ? 'opacity-20 grayscale'
+              : 'opacity-100'
           }`}
           onError={() => setImgSrc('/images/placeholder.svg')}
         />
@@ -28,7 +37,9 @@ export default function StashCard({ item }: { item: StashItemEnriched }) {
           </div>
         )}
 
-        <div className={`absolute left-0 top-0 h-full w-2 z-20 ${item.category.color.replace('text', 'bg') || 'bg-highlight'}`} />
+        <div
+          className={`absolute left-0 top-0 h-full w-2 z-20 ${item.category.color.replace('text', 'bg') || 'bg-highlight'}`}
+        />
       </div>
 
       <div className="flex-1 p-10 flex flex-col justify-between min-w-0 bg-transparent">
@@ -47,14 +58,25 @@ export default function StashCard({ item }: { item: StashItemEnriched }) {
 
           <div className="grid grid-cols-2 gap-8 p-6 bg-zinc-50/50 dark:bg-white/5 rounded-3xl border border-zinc-100 dark:border-white/5 mb-8">
             <div className="space-y-1">
-              <span className="text-[9px] font-black text-zinc-400 dark:text-zinc-500 block uppercase tracking-widest">Record_Type</span>
-              <span className="text-xs font-bold text-zinc-900 dark:text-zinc-200 uppercase">{item.category.name}</span>
+              <span className="text-[9px] font-black text-zinc-400 dark:text-zinc-500 block uppercase tracking-widest">
+                Record_Type
+              </span>
+              <span className="text-xs font-bold text-zinc-900 dark:text-zinc-200 uppercase">
+                {item.category.name}
+              </span>
             </div>
             <div className="space-y-1">
-              <span className="text-[9px] font-black text-zinc-400 dark:text-zinc-500 block uppercase tracking-widest">System_Tags</span>
+              <span className="text-[9px] font-black text-zinc-400 dark:text-zinc-500 block uppercase tracking-widest">
+                System_Tags
+              </span>
               <div className="flex flex-wrap gap-2">
                 {(item.tags || []).slice(0, 3).map((tag: any) => (
-                  <span key={tag.id} className="text-[10px] font-bold text-highlight">#{tag.name}</span>
+                  <span
+                    key={tag.id}
+                    className="text-[10px] font-bold text-highlight"
+                  >
+                    #{tag.name}
+                  </span>
                 ))}
               </div>
             </div>
@@ -66,13 +88,17 @@ export default function StashCard({ item }: { item: StashItemEnriched }) {
             &ldquo;{item.thoughts}&rdquo;
           </p>
           <div className="flex flex-col items-end shrink-0">
-            <span className={`text-xs font-black uppercase tracking-tighter ${item.status.color}`}>
+            <span
+              className={`text-xs font-black uppercase tracking-tighter ${item.status.color}`}
+            >
               {item.status.name}
             </span>
-            <div className={`h-1.5 w-14 rounded-full mt-2 opacity-20 dark:opacity-40 ${item.status.color.replace('text', 'bg')}`} />
+            <div
+              className={`h-1.5 w-14 rounded-full mt-2 opacity-20 dark:opacity-40 ${item.status.color.replace('text', 'bg')}`}
+            />
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
