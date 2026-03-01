@@ -27,7 +27,7 @@ export const Navbar = () => {
     pathname === path || pathname.startsWith(`${path}/`);
 
   return (
-    <nav className="sticky select-none top-0 z-50 w-full border-b border-border bg-nav backdrop-blur-md transition-colors duration-300">
+    <nav className="sticky select-none top-0 h-20 z-50 w-full border-b border-border bg-nav backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link

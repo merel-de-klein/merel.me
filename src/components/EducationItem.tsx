@@ -79,7 +79,7 @@ export const EducationItem = ({ item }: { item: Education }) => {
                 {item.score.map((s) => (
                   <div
                     key={s.label}
-                    className={`${theme.scoreBg} px-3 py-2 rounded-sm min-w-[90px] transition-all hover:bg-opacity-10`}
+                    className={`${theme.scoreBg} px-3 py-2 rounded-sm min-w-[90px] border shadow-sm transition-all hover:bg-opacity-10`}
                   >
                     <span className={`text-[9px] font-mono block leading-none mb-1.5 tracking-widest uppercase opacity-60 ${theme.text}`}>
                       {s.label}
@@ -95,7 +95,7 @@ export const EducationItem = ({ item }: { item: Education }) => {
             <ul className="space-y-2">
               {item.details.map((detail, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed font-medium transition-colors group-hover:text-foreground/80">
-                  <span className={`mt-1.5 w-1 h-1 shrink-0 rounded-full transition-colors ${isCyan ? 'bg-featured/40' : 'bg-highlight/40'}`} />
+                  <span className={`mt-2.5 w-1 h-1 shrink-0 rounded-full transition-colors ${isCyan ? 'bg-featured/40' : 'bg-highlight/40'}`} />
                   {detail}
                 </li>
               ))}

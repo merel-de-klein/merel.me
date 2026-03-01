@@ -1,3 +1,5 @@
+import { HiringStatus } from "@/enums/hiring";
+
 export const siteConfig = {
   description:
   'A curated collection of media, projects, and professional experience.',
@@ -19,3 +21,5 @@ export const personalInfo = {
   country: 'NL',
   coordinates: '52.0116° N, 4.7105° E',
 };
+
+export const hiringStatus = `${process.env.NEXT_PUBLIC_HIRING_STATUS || 0}` as HiringStatus;

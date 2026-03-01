@@ -6,11 +6,17 @@ export interface Company {
 export interface Position {
   title: string;
   description: string;
+  activities?: string[]
   startedAt: string;
   endedAt?: string;
   stack: string[];
   isHighlight?: boolean;
-  websiteUrl?: string; // Moved here
+  websiteUrl?: string;
+  metrics?: {
+    label: string;
+    value: string;
+    description?: string;
+  }[];
 }
 
 export interface Experience {
