@@ -12,6 +12,11 @@ export interface Position {
   stack: string[];
   isHighlight?: boolean;
   websiteUrl?: string;
+  metrics?: {
+    label: string;
+    value: string;
+    description?: string;
+  }[];
 }
 
 export interface Experience {

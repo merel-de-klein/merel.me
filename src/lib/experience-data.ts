@@ -97,13 +97,30 @@ export const workExperience: Experience[] = [
           'Converting old PHP frontend (with minimal documentation) to React',
           'Implementing new features in tandem with backend & design colleagues',
           'Improving user experience and site performance',
-          'Training and technical guidance of new colleagues within the team'
+          'Training and technical guidance of new colleagues within the team',
         ],
         startedAt: '2022-10-01',
         endedAt: '2026-01-31',
         stack: ['React', 'TypeScript', 'Sass'],
         isHighlight: true,
         websiteUrl: 'https://www.thingiverse.com',
+        metrics: [
+          {
+            label: 'MONTHLY_TRAFFIC',
+            value: '70M+',
+            description: 'Total monthly pageviews',
+          },
+          {
+            label: 'REGISTERED_USERS',
+            value: '7M+',
+            description: 'Global maker community',
+          },
+          {
+            label: 'TOTAL_DESIGNS',
+            value: '2.5M+',
+            description: 'Digital projects (Things) hosted',
+          },
+        ],
       },
       {
         title: 'Software Developer',
