@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
+import { HiringStatusSection } from '@/components/sections/HiringStatusSection';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { personalInfo, siteConfig } from '@/constants/site';
 import type { Metadata } from 'next';
@@ -62,7 +63,10 @@ export default function RootLayout({
         >
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1">
+              <HiringStatusSection />
+              {children}
+            </main>
             <Footer />
           </div>
         </ThemeProvider>
