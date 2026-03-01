@@ -72,7 +72,7 @@ export const workExperience: Experience[] = [
       {
         title: 'Software Developer',
         description:
-          'Transitioning the platform following the acquisition by MyMiniFactory. Responsible for frontend development and providing technical support to the team during the transition phase.',
+          'Continuing as a software developer following the acquisition by MyMiniFactory. Responsible for frontend development and providing technical support to the team during the transition phase.',
         startedAt: '2026-02-01',
         stack: ['React', 'TypeScript', 'Sass'],
         isHighlight: true,
@@ -92,6 +92,13 @@ export const workExperience: Experience[] = [
         title: 'Software Developer (Thingiverse)',
         description:
           'Full-time focus on thingiverse.com. Modernized core React architecture and optimized performance.',
+        activities: [
+          'Documenting and modernizing existing React structure',
+          'Converting old PHP frontend (with minimal documentation) to React',
+          'Implementing new features in tandem with backend & design colleagues',
+          'Improving user experience and site performance',
+          'Training and technical guidance of new colleagues within the team'
+        ],
         startedAt: '2022-10-01',
         endedAt: '2026-01-31',
         stack: ['React', 'TypeScript', 'Sass'],
