@@ -79,7 +79,7 @@ export const EducationItem = ({ item }: { item: Education }) => {
                 {item.score.map((s) => (
                   <div
                     key={s.label}
-                    className={`${theme.scoreBg} px-3 py-2 rounded-sm min-w-[90px] transition-all hover:bg-opacity-10`}
+                    className={`${theme.scoreBg} px-3 py-2 rounded-sm min-w-[90px] border shadow-sm transition-all hover:bg-opacity-10`}
                   >
                     <span className={`text-[9px] font-mono block leading-none mb-1.5 tracking-widest uppercase opacity-60 ${theme.text}`}>
                       {s.label}
